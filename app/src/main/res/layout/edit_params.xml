@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <EditText
+        android:id="@+id/cSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:importantForAutofill="no"
+        android:gravity="center_horizontal"
+        android:textSize="32sp"
+        android:hint="@string/walkingSpeed"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        android:nextFocusRight="@id/cInitiative"/>
+    <EditText
+        android:id="@+id/cInitiative"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:importantForAutofill="no"
+        android:gravity="center_horizontal"
+        android:textSize="32sp"
+        android:hint="@string/initiative"
+        android:inputType="numberSigned"
+        android:imeOptions="actionNext"
+        android:nextFocusRight="@id/cArmorClass"/>
+    <EditText
+        android:id="@+id/cArmorClass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:importantForAutofill="no"
+        android:gravity="center_horizontal"
+        android:textSize="32sp"
+        android:hint="@string/armorClassShort"
+        android:inputType="number"
+        android:imeOptions="actionDone"/>
+</LinearLayout>

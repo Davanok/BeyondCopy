@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".newCharacter.defaultCreate.DefaultCreateCharacterPersonality">
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/defaultNextToItemsBtn"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/personalityTraits"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:inputType="textMultiLine"
+            android:importantForAutofill="no"
+            android:hint="@string/personalityTraits"
+            android:layout_weight="1"/>
+        <EditText
+            android:id="@+id/personalityIdeals"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:inputType="textMultiLine"
+            android:importantForAutofill="no"
+            android:hint="@string/personalityIdeals"
+            android:layout_weight="1"/>
+        <EditText
+            android:id="@+id/personalityBonds"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:inputType="textMultiLine"
+            android:importantForAutofill="no"
+            android:hint="@string/personalityBonds"
+            android:layout_weight="1"/>
+        <EditText
+            android:id="@+id/personalityFlaws"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:inputType="textMultiLine"
+            android:importantForAutofill="no"
+            android:hint="@string/personalityFlaws"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/defaultNextToItemsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/next"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

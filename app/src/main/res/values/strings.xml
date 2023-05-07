@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">DnD Davanok</string>
+    <string name="menu_button_home">Home</string>
+    <string name="menu_button_settings">Settings</string>
+    <string name="defaultCardText">Default</string>
+    <string name="defaultTextShort">DFT</string>
+    <string name="defaultCardNum">12</string>
+    <string name="characterSheetLabel">Character Sheet</string>
+    <string name="newCharacterBtn">Create new character</string>
+    <string name="cName">Character`s name</string>
+    <string name="proficiencyBonus">Prof. bonus</string>
+    <string name="proficiencyBonusShort">Prof</string>
+    <string name="modifierShort">Mod</string>
+    <string name="skill">Skill</string>
+    <string name="skills">Skills</string>
+    <string name="bonus">Bonus</string>
+    <string name="walkingSpeed">Speed</string>
+    <string name="initiative">Initiative</string>
+    <string name="armorClass">Armor Class</string>
+    <string name="armorClassShort">AC</string>
+    <string name="cClass">Class</string>
+    <string name="cRace">Race</string>
+    <string name="cBackground">Background</string>
+
+    <string name="strength">Strength</string>
+    <string name="dexterity">Dexterity</string>
+    <string name="constitution">Constitution</string>
+    <string name="intelligence">Intelligence</string>
+    <string name="wisdom">Wisdom</string>
+    <string name="charisma">Charisma</string>
+    <string name="savingThrows">Saving throws</string>
+
+    <string name="acrobatics">acrobatics</string>
+    <string name="animalHandling">animal handling</string>
+    <string name="arcana">arcana</string>
+    <string name="athletics">athletics</string>
+    <string name="deception">deception</string>
+    <string name="history">history</string>
+    <string name="insight">insight</string>
+    <string name="intimidation">intimidation</string>
+    <string name="investigation">investigation</string>
+    <string name="medicine">medicine</string>
+    <string name="nature">nature</string>
+    <string name="perception">perception</string>
+    <string name="performance">performance</string>
+    <string name="persuasion">persuasion</string>
+    <string name="religion">religion</string>
+    <string name="sleightOfHand">sleight of hand</string>
+    <string name="stealth">stealth</string>
+    <string name="survival">survival</string>
+
+    <string name="strengthShort">STR</string>
+    <string name="dexterityShort">DEX</string>
+    <string name="constitutionShort">CON</string>
+    <string name="intelligenceShort">INT</string>
+    <string name="wisdomShort">WIS</string>
+    <string name="charismaShort">CHA</string>
+
+    <string name="fastCreateCharacterBtn">fast create</string>
+    <string name="defaultCreateCharacterBtn">default create</string>
+
+    <string name="characterName">Name</string>
+    <string name="characterClass">Class</string>
+    <string name="characterRace">Race</string>
+    <string name="characterBackground">Background</string>
+    <string name="characterExperience">Experience</string>
+    <string name="characterExperienceShort">Exp</string>
+    <string name="characterLevel">Level</string>
+    <string name="characterLevelShort">Lvl</string>
+
+    <array name="classes">
+        <item>Artificer</item>
+        <item>Barbarian</item>
+        <item>Bard</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Fighter</item>
+        <item>Monk</item>
+        <item>Paladin</item>
+        <item>Ranger</item>
+        <item>Rogue</item>
+        <item>Sorcerer</item>
+        <item>Warlock</item>
+        <item>Wizard</item>
+    </array>
+
+    <string name="next">Next</string>
+    <string name="enterParams">Please enter params</string>
+    <string name="passiveWisdom">Passive wisdom</string>
+
+    <string name="personalityTraits">Personality traits</string>
+    <string name="personalityIdeals">Ideals</string>
+    <string name="personalityBonds">Bonds</string>
+    <string name="personalityFlaws">Flaws</string>
+
+    <string name="notIndicated">Not indicated</string>
+    <string name="addItem">Add item</string>
+    <string name="itemName">Item name</string>
+    <string name="itemDescription">Item description</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="OK">OK</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

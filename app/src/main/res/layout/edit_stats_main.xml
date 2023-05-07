@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <EditText
+        android:id="@+id/cExperience"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:importantForAutofill="no"
+        android:gravity="center_horizontal"
+        android:textSize="32sp"
+        android:hint="@string/characterExperienceShort"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@id/cLevel"/>
+    <EditText
+        android:id="@+id/cLevel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:importantForAutofill="no"
+        android:gravity="center_horizontal"
+        android:textSize="32sp"
+        android:hint="@string/characterLevel"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@id/cProficiencyBonus"/>
+    <EditText
+        android:id="@+id/cProficiencyBonus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:importantForAutofill="no"
+        android:gravity="center_horizontal"
+        android:textSize="32sp"
+        android:hint="@string/proficiencyBonusShort"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@id/cSpeed"/>
+</LinearLayout>

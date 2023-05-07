@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/charactersList">
+
+    <fragment
+        android:id="@+id/characterSheet"
+        android:name="com.example.beyondcopy.csheet.CharacterSheet"
+        android:label="@string/characterSheetLabel"
+        tools:layout="@layout/fragment_character_sheet" >
+        <action
+            android:id="@+id/action_characterSheet_to_characterListSettings"
+            app:destination="@id/characterListSettings" />
+        <action
+            android:id="@+id/action_characterSheet_to_charactersList"
+            app:destination="@id/charactersList" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterListSettings"
+        android:name="com.example.beyondcopy.cssettings.CharacterListSettings"
+        android:label="fragment_character_list_settings"
+        tools:layout="@layout/fragment_character_list_settings" >
+        <action
+            android:id="@+id/action_characterListSettings_to_characterSheet"
+            app:destination="@id/characterSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/charactersList"
+        android:name="com.example.beyondcopy.cSheetsList.CharactersList"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_characters_list" >
+        <action
+            android:id="@+id/action_charactersList_to_characterSheet"
+            app:destination="@id/characterSheet" />
+        <action
+            android:id="@+id/action_charactersList_to_settings"
+            app:destination="@id/settings" />
+        <action
+            android:id="@+id/action_charactersList_to_fastCreateCharacter"
+            app:destination="@id/fastCreateCharacter" />
+        <action
+            android:id="@+id/action_charactersList_to_defaultCreateCharacter"
+            app:destination="@id/defaultCreateCharacter" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.beyondcopy.settings.Settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settings_to_charactersList"
+            app:destination="@id/charactersList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fastCreateCharacter"
+        android:name="com.example.beyondcopy.newCharacter.fastCreate.FastCreateCharacter"
+        android:label="fragment_fast_create_character"
+        tools:layout="@layout/fragment_fast_create_character" />
+    <fragment
+        android:id="@+id/defaultCreateCharacter"
+        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacter"
+        android:label="fragment_default_create_character"
+        tools:layout="@layout/fragment_default_create_character" >
+        <action
+            android:id="@+id/action_defaultCreateCharacter_to_defaultCreateCharacterStats"
+            app:destination="@id/defaultCreateCharacterStats" />
+    </fragment>
+    <fragment
+        android:id="@+id/defaultCreateCharacterStats"
+        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterStats"
+        android:label="fragment_default_create_character_stats"
+        tools:layout="@layout/fragment_default_create_character_stats" >
+        <action
+            android:id="@+id/action_defaultCreateCharacterStats_to_defaultCreateCharacterPersonality"
+            app:destination="@id/defaultCreateCharacterPersonality" />
+    </fragment>
+    <fragment
+        android:id="@+id/defaultCreateCharacterItems"
+        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterItems"
+        android:label="fragment_default_create_character_items"
+        tools:layout="@layout/fragment_default_create_character_items" />
+    <fragment
+        android:id="@+id/defaultCreateCharacterPersonality"
+        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterPersonality"
+        android:label="fragment_default_create_character_personality"
+        tools:layout="@layout/fragment_default_create_character_personality" >
+        <action
+            android:id="@+id/action_defaultCreateCharacterPersonality_to_defaultCreateCharacterItems"
+            app:destination="@id/defaultCreateCharacterItems" />
+    </fragment>
+</navigation>
