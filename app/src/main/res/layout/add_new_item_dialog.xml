@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/newItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/itemName"
+            android:importantForAutofill="no"
+            android:inputType="textAutoCorrect"
+            android:layout_weight="1"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/newItemCount"
+            android:minHeight="48dp"
+            android:textColorHint="?attr/colorSecondary"/>
+        <EditText
+            android:id="@+id/newItemCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:hint="@string/count"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/newItemDescription"
+            android:minHeight="48dp"
+            android:textColorHint="?attr/colorSecondary"/>
+    </LinearLayout>
+    <EditText
+        android:id="@+id/newItemDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/itemDescription"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:imeOptions="actionDone"
+        android:minHeight="48dp"
+        android:textColorHint="?attr/colorSecondary"/>
+
+    <include
+        android:id="@+id/buttonPad"
+        layout="@layout/button_pad"/>
+
+</LinearLayout>

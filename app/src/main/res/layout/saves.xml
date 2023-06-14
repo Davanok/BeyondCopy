@@ -2,99 +2,162 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:columnCount="3"
-    android:rowCount="4">
+    android:columnCount="3">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:text="@string/savingThrows"
         android:layout_columnSpan="3"/>
-    <TextView
-        android:id="@+id/savesStrength"
-        android:textSize="32sp"
-        android:layout_columnWeight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:id="@+id/savesDexterity"
-        android:textSize="32sp"
-        android:layout_columnWeight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:id="@+id/savesConstitution"
-        android:textSize="32sp"
-        android:layout_columnWeight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:text="@string/strength"
-        android:textSize="16sp"
-        android:layout_columnWeight="1"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:text="@string/dexterity"
-        android:textSize="16sp"
-        android:layout_columnWeight="1"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:text="@string/constitution"
-        android:textSize="16sp"
-        android:layout_columnWeight="1"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:gravity="center_horizontal"/>
 
-
-
-    <TextView
-        android:id="@+id/savesIntelligence"
-        android:textSize="32sp"
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:id="@+id/savesWisdom"
-        android:textSize="32sp"
+        android:layout_margin="3dp"
+        android:padding="3dp">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/savesStrength"
+                android:textSize="32sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+            <TextView
+                android:text="@string/strength"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:id="@+id/savesCharisma"
-        android:textSize="32sp"
+        android:layout_margin="3dp"
+        android:padding="3dp">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/savesDexterity"
+                android:textSize="32sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+            <TextView
+                android:text="@string/dexterity"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:text="@string/intelligence"
-        android:textSize="16sp"
+        android:layout_margin="3dp"
+        android:padding="3dp">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/savesConstitution"
+                android:textSize="32sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+            <TextView
+                android:text="@string/constitution"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
-        android:layout_height="wrap_content"
         android:layout_width="0dp"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:text="@string/wisdom"
-        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:padding="3dp">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/savesIntelligence"
+                android:textSize="32sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+            <TextView
+                android:text="@string/intelligence"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
-        android:layout_height="wrap_content"
         android:layout_width="0dp"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:text="@string/charisma"
-        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:padding="3dp">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/savesWisdom"
+                android:textSize="32sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+            <TextView
+                android:text="@string/wisdom"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
-        android:layout_height="wrap_content"
         android:layout_width="0dp"
-        android:gravity="center_horizontal"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:padding="3dp">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/savesCharisma"
+                android:textSize="32sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+            <TextView
+                android:text="@string/charisma"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </GridLayout>

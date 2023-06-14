@@ -3,37 +3,69 @@ package com.example.beyondcopy.csheet
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.beyondcopy.csheet.sheets.Features
+import com.example.beyondcopy.csheet.sheets.Items
+import com.example.beyondcopy.csheet.sheets.Languages
+import com.example.beyondcopy.csheet.sheets.MainStats
+import com.example.beyondcopy.csheet.sheets.Notes
 import com.example.beyondcopy.csheet.sheets.Personality
+import com.example.beyondcopy.csheet.sheets.Proficiencies
 import com.example.beyondcopy.csheet.sheets.Stats
+import com.example.beyondcopy.csheet.sheets.Weapons
 import com.example.beyondcopy.csheet.sheets.skills.Skills
 import com.example.beyondcopy.database.CharactersDataBase
+import com.example.beyondcopy.toInt
 
 class CharacteristicsViewPagerAdapter(
-    fragment: Fragment,
+    parentFragment: Fragment,
     private val character: CharactersDataBase
-    ): FragmentStateAdapter(fragment) {
-
-    override fun getItemCount() = 6
+    ): FragmentStateAdapter(parentFragment) {
+    override fun getItemCount() = 10
 
     override fun createFragment(position: Int): Fragment {
         return when(position){
-            0->showStatsFragment(character)
-            1->showSkillsFragment(character)
-            2->showPersonalityFragment(character)
-            else -> showStatsFragment(character)
+            0->showMainStatsFragment(character)
+            1->showStatsFragment(character)
+            2->showSkillsFragment(character)
+            3->showPersonalityFragment(character)
+            4->showItemsFragment(character.id)
+            5->showWeaponsFragment(character.id)
+            6->showFeaturesFragment(character.id)
+            7->showProficienciesFragment(character.id)
+            8->showLanguagesFragment(character.languages)
+            9->showNotesFragment(character.id)
+            else -> showMainStatsFragment(character)
         }
+    }
+    private fun showMainStatsFragment(character: CharactersDataBase): Fragment{
+
+        val characteristics = arrayOf(
+                character.proficiencyBonus?:0, character.speed?:0, character.initiative?:0, character.armorClass?:0
+        ).toIntArray()
+
+        val crb = arrayOf(
+            character.cClass, character.cRace, character.cBackground
+        )
+
+        val bundle = Bundle()
+        bundle.putIntArray("characteristics", characteristics)
+        bundle.putStringArray("crb", crb)
+
+        val fragment = MainStats()
+        fragment.arguments = bundle
+        return fragment
     }
     private fun showStatsFragment(character: CharactersDataBase): Fragment{
         val proficiencyBonus = character.proficiencyBonus?:2
-        val stats = getStats(character)
+        val stats = character.stats?:List(6){0}
         val modifiers = stats.map { s -> (s-10)/2 }.toIntArray()
-        val perception = if(character.skills != null) character.skills!!.split("|")[11].toInt() * character.proficiencyBonus!!
+        val perception = if(character.skills != null) character.skills!![11].toInt() * character.proficiencyBonus!!
         else 0
 
         val saves = getSaves(character, modifiers, proficiencyBonus)
 
         val arguments = Bundle()
-        arguments.putIntArray("stats", stats)
+        arguments.putIntArray("stats", stats.toIntArray())
         arguments.putIntArray("modifiers", modifiers)
         arguments.putIntArray("saves", saves)
         arguments.putInt("perception", perception)
@@ -42,17 +74,15 @@ class CharacteristicsViewPagerAdapter(
         return fragment
     }
     private fun showSkillsFragment(character: CharactersDataBase): Fragment{
-        val stats = getStats(character)
+        val stats = character.stats?:List(6){0}
         val proficiencyBonus = character.proficiencyBonus?:2
         val modifiers = stats.map { s -> (s-10)/2 }.toIntArray()
-        val skillModifiers: BooleanArray =
-            if(character.skills!=null) character.skills!!.split("|").map {s -> s == "1"}.toBooleanArray()
-            else BooleanArray(18){false}
+        val skillModifiers = character.skills ?: List(18) { false }
 
         val skills = getSkills(skillModifiers, modifiers, proficiencyBonus)
 
         val arguments = Bundle()
-        arguments.putBooleanArray("skillModifiers", skillModifiers)
+        arguments.putBooleanArray("skillModifiers", skillModifiers.toBooleanArray())
         arguments.putIntArray("skills", skills)
 
         val fragment = Skills()
@@ -76,8 +106,57 @@ class CharacteristicsViewPagerAdapter(
 
         return fragment
     }
+    private fun showWeaponsFragment(characterId: Long): Fragment{
 
-    private fun getSkills(skillsModifiers: BooleanArray, modifiers: IntArray, profBonus: Int): IntArray{
+        val arguments = Bundle()
+        arguments.putLong("characterId", characterId)
+        val fragment = Weapons()
+        fragment.arguments = arguments
+
+        return fragment
+    }
+    private fun showItemsFragment(characterId: Long): Fragment{
+        val arguments = Bundle()
+        arguments.putLong("characterId", characterId)
+        val fragment = Items()
+        fragment.arguments = arguments
+
+        return fragment
+    }
+    private fun showFeaturesFragment(characterId: Long): Fragment{
+        val arguments = Bundle()
+        arguments.putLong("characterId", characterId)
+        val fragment = Features()
+        fragment.arguments = arguments
+
+        return fragment
+    }
+    private fun showProficienciesFragment(characterId: Long): Fragment{
+        val arguments = Bundle()
+        arguments.putLong("characterId", characterId)
+        val fragment = Proficiencies()
+        fragment.arguments = arguments
+
+        return fragment
+    }
+    private fun showLanguagesFragment(languages: String?): Fragment{
+        val arguments = Bundle()
+        arguments.putString("languages", languages)
+        val fragment = Languages()
+        fragment.arguments = arguments
+
+        return fragment
+    }
+    private fun showNotesFragment(characterId: Long): Fragment{
+        val arguments = Bundle()
+        arguments.putLong("characterId", characterId)
+        val fragment = Notes()
+        fragment.arguments = arguments
+        return fragment
+    }
+
+
+    private fun getSkills(skillsModifiers: List<Boolean>, modifiers: IntArray, profBonus: Int): IntArray{
         fun numToSkill(num: Int): Int{
             return when(num){
                 0->1
@@ -101,34 +180,19 @@ class CharacteristicsViewPagerAdapter(
                 else -> -1
             }
         }
-        fun Boolean.toInt(): Int{
-            return if(this) 1
-            else 0
-        }
         val skills = IntArray(18){0}
         for(i in skills.indices){
             skills[i] = modifiers[numToSkill(i)] + (skillsModifiers[i].toInt() * profBonus)
         }
         return skills
     }
-    private fun getStats(character: CharactersDataBase): IntArray {
-        val arr = arrayOf(
-            character.strength?:0,
-            character.dexterity?:0,
-            character.constitution?:0,
-            character.intelligence?:0,
-            character.wisdom?:0,
-            character.charisma?:0
-        )
-        return arr.toIntArray()
-    }
     private fun getSaves(character: CharactersDataBase, modifiers: IntArray, proficiencyBonus: Int): IntArray{
         val saves = IntArray(6)
-        val savingThrows: IntArray = if(character.savingThrows!=null) character.savingThrows!!.split("|").map {s->s.toInt()}.toIntArray()
-        else IntArray(6) { 0 }
+        val savingThrows: List<Boolean> = if(character.savingThrows!=null) character.savingThrows!!
+        else List(6){false}
 
         for(i in saves.indices) {
-            saves[i] = modifiers[i] + (savingThrows[i] * proficiencyBonus)
+            saves[i] = modifiers[i] + (savingThrows[i].toInt() * proficiencyBonus)
         }
         return saves
     }

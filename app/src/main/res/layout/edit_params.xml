@@ -38,5 +38,6 @@
         android:textSize="32sp"
         android:hint="@string/armorClassShort"
         android:inputType="number"
-        android:imeOptions="actionDone"/>
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@id/maxHitPoints"/>
 </LinearLayout>

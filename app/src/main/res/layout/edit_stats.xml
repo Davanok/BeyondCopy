@@ -4,11 +4,12 @@
     android:layout_height="wrap_content"
     android:columnCount="3">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_margin="3dp">
+        android:layout_margin="3dp"
+        android:padding="3dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -36,13 +37,14 @@
                 android:text="@string/strength"
                 android:gravity="center_horizontal"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_margin="3dp">
+        android:layout_margin="3dp"
+        android:padding="3dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -70,13 +72,14 @@
                 android:text="@string/dexterity"
                 android:gravity="center_horizontal"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_margin="3dp">
+        android:layout_margin="3dp"
+        android:padding="3dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -104,12 +107,13 @@
                 android:text="@string/constitution"
                 android:gravity="center_horizontal"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_margin="3dp">
+        android:layout_margin="3dp"
+        android:padding="3dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -137,12 +141,13 @@
                 android:text="@string/intelligence"
                 android:gravity="center_horizontal"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_margin="3dp">
+        android:layout_margin="3dp"
+        android:padding="3dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -170,12 +175,13 @@
                 android:text="@string/wisdom"
                 android:gravity="center_horizontal"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
         android:layout_columnWeight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_margin="3dp">
+        android:layout_margin="3dp"
+        android:padding="3dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -203,5 +209,5 @@
                 android:text="@string/charisma"
                 android:gravity="center_horizontal"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </GridLayout>

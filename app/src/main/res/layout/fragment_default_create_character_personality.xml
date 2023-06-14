@@ -5,49 +5,64 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".newCharacter.defaultCreate.DefaultCreateCharacterPersonality">
-
-    <LinearLayout
+    <ScrollView
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/defaultNextToItemsBtn"
-        android:layout_gravity="center_horizontal|top"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical">
-        <EditText
-            android:id="@+id/personalityTraits"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:inputType="textMultiLine"
-            android:importantForAutofill="no"
-            android:hint="@string/personalityTraits"
-            android:layout_weight="1"/>
-        <EditText
-            android:id="@+id/personalityIdeals"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:inputType="textMultiLine"
-            android:importantForAutofill="no"
-            android:hint="@string/personalityIdeals"
-            android:layout_weight="1"/>
-        <EditText
-            android:id="@+id/personalityBonds"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:inputType="textMultiLine"
-            android:importantForAutofill="no"
-            android:hint="@string/personalityBonds"
-            android:layout_weight="1"/>
-        <EditText
-            android:id="@+id/personalityFlaws"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:inputType="textMultiLine"
-            android:importantForAutofill="no"
-            android:hint="@string/personalityFlaws"
-            android:layout_weight="1"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/personalityTraits">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/personalityTraits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:importantForAutofill="no"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/personalityIdeals">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/personalityIdeals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:importantForAutofill="no"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/personalityBonds">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/personalityBonds"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:importantForAutofill="no"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/personalityFlaws">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/personalityFlaws"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:importantForAutofill="no"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
     <Button
         android:id="@+id/defaultNextToItemsBtn"
@@ -56,6 +71,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/next"/>
+        android:text="@string/next"
+        android:enabled="false"
+        android:maxHeight="48dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

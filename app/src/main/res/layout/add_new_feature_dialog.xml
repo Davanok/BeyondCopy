@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <EditText
+        android:id="@+id/newFeatureName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/featureName"
+        android:importantForAutofill="no"
+        android:inputType="textAutoCorrect"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@id/newFeatureDescription"
+        android:minHeight="48dp"
+        android:textColorHint="?attr/colorSecondary"/>
+
+    <EditText
+        android:id="@+id/newFeatureDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/featureDescription"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine|textAutoCorrect"
+        android:minHeight="48dp"
+        android:textColorHint="?attr/colorSecondary"/>
+
+    <include
+        android:id="@+id/buttonPad"
+        layout="@layout/button_pad"/>
+
+</LinearLayout>

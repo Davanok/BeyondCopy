@@ -1,19 +1,19 @@
 package com.example.beyondcopy.newCharacter.defaultCreate
 
 import android.os.Bundle
-import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.beyondcopy.R
+import com.example.beyondcopy.adapters.HitDicesSpinnerAdapter
+import com.example.beyondcopy.classes.Dice
 import com.example.beyondcopy.database.DataBaseViewModel
 import com.example.beyondcopy.databinding.FragmentDefaultCreateCharacterBinding
-import kotlinx.coroutines.launch
+import com.example.beyondcopy.setObserver
+import com.example.beyondcopy.toInt
 
 class DefaultCreateCharacter : Fragment() {
     private lateinit var binding: FragmentDefaultCreateCharacterBinding
@@ -28,49 +28,64 @@ class DefaultCreateCharacter : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        val dataViewModel = ViewModelProvider(requireActivity())[DataBaseViewModel::class.java]
+        val dataViewModel by activityViewModels<DataBaseViewModel>()
 
+        val characterId = requireArguments().getLong("characterId")
+
+        val dices = listOf(
+            Dice(requireContext(), 4),
+            Dice(requireContext(), 6),
+            Dice(requireContext(), 8),
+            Dice(requireContext(), 10),
+            Dice(requireContext(), 12),
+            Dice(requireContext(), 20)
+        )
+        val adapter = HitDicesSpinnerAdapter(requireContext(), dices)
+        binding.hitDice.setAdapter(adapter)
+
+        var hitDice = -1
+        binding.hitDice.setText("", false)
+        binding.hitDice.setOnItemClickListener { _, _, i, _ ->
+            hitDice = i
+            binding.hitDice.setText(dices[i].dice, false)
+        }
+        setObserver(binding.defaultNextToStatsBtn,
+
+            binding.CScName,
+            binding.newCharacterMainParams.editCClass,
+            binding.newCharacterMainParams.editCRace,
+            binding.newCharacterMainParams.editCBackground,
+            binding.editStatsMain.cExperience,
+            binding.editStatsMain.cLevel,
+            binding.editStatsMain.cProficiencyBonus,
+            binding.editParams.cSpeed,
+            binding.editParams.cArmorClass,
+            binding.editParams.cInitiative,
+            binding.maxHitPoints,
+            binding.hitDice){
+            hitDice != -1
+        }
 
         binding.defaultNextToStatsBtn.setOnClickListener{
-            val cName = binding.CScName.text
-            val cClass = binding.newCharacterMainParams.editCClass.text
-            val cRace = binding.newCharacterMainParams.editCRace.text
-            val cBackground = binding.newCharacterMainParams.editCBackground.text
-
-            val cExperience = binding.editStatsMain.cExperience.text
-            val cLevel = binding.editStatsMain.cLevel.text
-            val cProficiencyBonus = binding.editStatsMain.cProficiencyBonus.text
-
-            val cSpeed = binding.editParams.cSpeed.text
-            val cInitiative = binding.editParams.cInitiative.text
-            val cArmorClass = binding.editParams.cArmorClass.text
-
-            fun Editable.toInt(): Int{
-                return this.toString().toInt()
-            }
-            if(cName.isNotBlank() && cClass.isNotBlank() && cRace.isNotBlank() && cBackground.isNotBlank()
-                && cExperience.isNotBlank() && cLevel.isNotBlank() && cProficiencyBonus.isNotBlank()
-                && cSpeed.isNotBlank() && cInitiative.isNotBlank() && cArmorClass.isNotBlank()){
-                lifecycleScope.launch {
-                    val characterId = dataViewModel.insertCharactersMain(
-                        cName.toString(),
-                        cClass.toString(),
-                        cRace.toString(),
-                        cBackground.toString(),
-                        cExperience.toInt(),
-                        cLevel.toInt(),
-                        cProficiencyBonus.toInt(),
-                        cSpeed.toInt(),
-                        cInitiative.toInt(),
-                        cArmorClass.toInt()
-                    )
-                    val arguments = Bundle()
-                    arguments.putLong("characterId", characterId)
-                    arguments.putInt("proficiencyBonus", cProficiencyBonus.toInt())
-                    findNavController().navigate(R.id.action_defaultCreateCharacter_to_defaultCreateCharacterStats, arguments)
-                }
-            }
-            else Toast.makeText(requireContext(), R.string.enterParams, Toast.LENGTH_SHORT).show()
+            dataViewModel.updateCharactersMain(
+                characterId,
+                binding.CScName.text.toString(),
+                binding.newCharacterMainParams.editCClass.text.toString(),
+                binding.newCharacterMainParams.editCRace.text.toString(),
+                binding.newCharacterMainParams.editCBackground.text.toString(),
+                binding.editStatsMain.cExperience.text.toInt(),
+                binding.editStatsMain.cLevel.text.toInt(),
+                binding.editStatsMain.cProficiencyBonus.text.toInt(),
+                binding.editParams.cSpeed.text.toInt(),
+                binding.editParams.cArmorClass.text.toInt(),
+                binding.editParams.cInitiative.text.toInt(),
+                hitDice,
+                binding.maxHitPoints.text.toInt()
+            )
+            val arguments = Bundle()
+            arguments.putLong("characterId", characterId)
+            arguments.putInt("proficiencyBonus", binding.editStatsMain.cProficiencyBonus.text.toInt())
+            findNavController().navigate(R.id.action_defaultCreateCharacter_to_defaultCreateCharacterStats, arguments)
         }
     }
 }

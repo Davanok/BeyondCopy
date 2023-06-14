@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/newWeaponName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/itemName"
+            android:importantForAutofill="no"
+            android:inputType="textAutoCorrect"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/newWeaponCount"
+            android:textSize="24sp"
+            android:textColorHint="?attr/colorSecondary"/>
+        <EditText
+            android:id="@+id/newWeaponCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/count"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/newWeaponDamage"
+            android:textSize="24sp"
+            android:textColorHint="?attr/colorSecondary"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/newWeaponDamage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/damage"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/newWeaponATKBonus"
+            android:textSize="20sp"
+            android:textColorHint="?attr/colorSecondary"/>
+        <EditText
+            android:id="@+id/newWeaponATKBonus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/ATKBonus"
+            android:importantForAutofill="no"
+            android:inputType="numberSigned"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/newWeaponDamageType"
+            android:textSize="20sp"
+            android:textColorHint="?attr/colorSecondary"/>
+        <EditText
+            android:id="@+id/newWeaponDamageType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/type"
+            android:importantForAutofill="no"
+            android:inputType="textAutoCorrect|textMultiLine"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/newWeaponDescription"
+            android:textSize="20sp"
+            android:textColorHint="?attr/colorSecondary"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/newWeaponDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/weaponDescription"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        android:textColorHint="?attr/colorSecondary"/>
+
+    <include
+        android:id="@+id/buttonPad"
+        layout="@layout/button_pad"/>
+
+</LinearLayout>

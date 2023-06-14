@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/newNoteName"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:hint="@string/noteName"
+            android:textColorHint="?attr/colorSecondary"
+            android:minHeight="48dp"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/newNotePriority"/>
+
+        <EditText
+            android:id="@+id/newNotePriority"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:importantForAutofill="no"
+            android:hint="@string/priority"
+            android:maxLength="1"
+            android:minHeight="48dp"
+            android:textColorHint="?attr/colorSecondary"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/newNoteText"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/newNoteText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/noteText"
+        android:textColorHint="?attr/colorSecondary"
+        android:minHeight="48dp"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:imeOptions="actionDone"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/completedNoteSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/isCompleted"/>
+
+    <include
+        android:id="@+id/buttonPad"
+        layout="@layout/button_pad"/>
+
+</LinearLayout>

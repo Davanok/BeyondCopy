@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".newCharacter.defaultCreate.DefaultCreateCharacterItems"
-    android:orientation="vertical">
+    tools:context=".newCharacter.defaultCreate.DefaultCreateCharacterItems">
+
+    <include
+        android:id="@+id/itemListLayout"
+        layout="@layout/items_list"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/addItemBtn"
+        android:id="@+id/defaultNextToWeaponsBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:text="@string/addItem"/>
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="@string/next"/>
 
-</LinearLayout>
+</FrameLayout>

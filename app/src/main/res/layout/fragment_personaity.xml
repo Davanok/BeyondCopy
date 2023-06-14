@@ -14,64 +14,72 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:text="@string/personalityTraits"/>
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp">
+            android:layout_margin="3dp"
+            android:padding="3dp">
             <TextView
+                android:layout_margin="5dp"
                 android:id="@+id/traits"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:text="@string/personalityIdeals"/>
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp">
+            android:layout_margin="3dp"
+            android:padding="3dp">
             <TextView
+                android:layout_margin="5dp"
                 android:id="@+id/ideals"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:text="@string/personalityBonds"/>
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp">
+            android:layout_margin="3dp"
+            android:padding="3dp">
             <TextView
+                android:layout_margin="5dp"
                 android:id="@+id/bonds"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:text="@string/personalityFlaws"/>
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp">
+            android:layout_margin="3dp"
+            android:padding="3dp">
             <TextView
+                android:layout_margin="5dp"
                 android:id="@+id/flaws"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
 </ScrollView>

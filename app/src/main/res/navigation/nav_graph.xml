@@ -2,33 +2,31 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
     app:startDestination="@id/charactersList">
 
     <fragment
         android:id="@+id/characterSheet"
         android:name="com.example.beyondcopy.csheet.CharacterSheet"
-        android:label="@string/characterSheetLabel"
+        android:label="{characterName}"
         tools:layout="@layout/fragment_character_sheet" >
-        <action
-            android:id="@+id/action_characterSheet_to_characterListSettings"
-            app:destination="@id/characterListSettings" />
+        <argument
+            android:name="characterId"
+            app:nullable="false"
+            app:argType="long"/>
+        <argument
+            android:name="characterName"
+            app:nullable="false"
+            app:argType="string"/>
         <action
             android:id="@+id/action_characterSheet_to_charactersList"
             app:destination="@id/charactersList" />
-    </fragment>
-    <fragment
-        android:id="@+id/characterListSettings"
-        android:name="com.example.beyondcopy.cssettings.CharacterListSettings"
-        android:label="fragment_character_list_settings"
-        tools:layout="@layout/fragment_character_list_settings" >
         <action
-            android:id="@+id/action_characterListSettings_to_characterSheet"
-            app:destination="@id/characterSheet" />
+            android:id="@+id/action_characterSheet_to_characterSheetSettings"
+            app:destination="@id/characterSheetSettings"/>
     </fragment>
     <fragment
         android:id="@+id/charactersList"
-        android:name="com.example.beyondcopy.cSheetsList.CharactersList"
+        android:name="com.example.beyondcopy.charactersList.CharactersList"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_characters_list" >
         <action
@@ -69,18 +67,13 @@
     </fragment>
     <fragment
         android:id="@+id/defaultCreateCharacterStats"
-        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterStats"
+        android:name="com.example.beyondcopy.newCharacter.defaultCreate.stats.DefaultCreateCharacterStats"
         android:label="fragment_default_create_character_stats"
         tools:layout="@layout/fragment_default_create_character_stats" >
         <action
             android:id="@+id/action_defaultCreateCharacterStats_to_defaultCreateCharacterPersonality"
             app:destination="@id/defaultCreateCharacterPersonality" />
     </fragment>
-    <fragment
-        android:id="@+id/defaultCreateCharacterItems"
-        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterItems"
-        android:label="fragment_default_create_character_items"
-        tools:layout="@layout/fragment_default_create_character_items" />
     <fragment
         android:id="@+id/defaultCreateCharacterPersonality"
         android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterPersonality"
@@ -89,5 +82,67 @@
         <action
             android:id="@+id/action_defaultCreateCharacterPersonality_to_defaultCreateCharacterItems"
             app:destination="@id/defaultCreateCharacterItems" />
+    </fragment>
+    <fragment
+        android:id="@+id/defaultCreateCharacterItems"
+        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterItems"
+        android:label="fragment_default_create_character_items"
+        tools:layout="@layout/fragment_default_create_character_items" >
+        <action
+            android:id="@+id/action_defaultCreateCharacterItems_to_defaultCreateCharacterWeapons"
+            app:destination="@id/defaultCreateCharacterWeapons"/>
+    </fragment>
+    <fragment
+        android:id="@+id/defaultCreateCharacterWeapons"
+        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterWeapons"
+        android:label="fragment_default_create_character_weapons"
+        tools:layout="@layout/fragment_default_create_character_weapons" >
+        <action
+            android:id="@+id/action_defaultCreateCharacterWeapons_to_defaultCreateCharacterFeatures"
+            app:destination="@id/defaultCreateCharacterFeatures" />
+    </fragment>
+    <fragment
+        android:id="@+id/defaultCreateCharacterFeatures"
+        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterFeatures"
+        android:label="fragment_default_create_character_features"
+        tools:layout="@layout/fragment_default_create_character_features" >
+        <action
+            android:id="@+id/action_defaultCreateCharacterFeatures_to_defaultCreateCharacterProficiencies"
+            app:destination="@id/defaultCreateCharacterProficiencies" />
+    </fragment>
+    <fragment
+        android:id="@+id/defaultCreateCharacterProficiencies"
+        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterProficiencies"
+        android:label="fragment_default_create_character_proficiencies"
+        tools:layout="@layout/fragment_default_create_character_proficiencies" >
+        <action
+            android:id="@+id/action_defaultCreateCharacterProficiencies_to_defaultCreateCharacterLanguages"
+            app:destination="@id/defaultCreateCharacterLanguages" />
+    </fragment>
+    <fragment
+        android:id="@+id/defaultCreateCharacterLanguages"
+        android:name="com.example.beyondcopy.newCharacter.defaultCreate.DefaultCreateCharacterLanguages"
+        android:label="fragment_default_create_character_languages"
+        tools:layout="@layout/fragment_default_create_character_languages">
+        <action
+            android:id="@+id/action_defaultCreateCharacterLanguages_to_charactersList"
+            app:destination="@id/charactersList" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterSheetSettings"
+        android:name="com.example.beyondcopy.csheet.edit.EditCharacter"
+        android:label="{title}"
+        tools:layout="@layout/fragment_edit_character" >
+        <argument
+            android:name="characterId"
+            app:nullable="false"
+            app:argType="long"/>
+        <argument
+            android:name="title"
+            app:nullable="false"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_characterSheetSettings_to_characterSheet"
+            app:destination="@id/characterSheet"/>
     </fragment>
 </navigation>

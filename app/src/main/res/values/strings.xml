@@ -21,6 +21,7 @@
     <string name="cClass">Class</string>
     <string name="cRace">Race</string>
     <string name="cBackground">Background</string>
+    <string name="stats">Stats</string>
 
     <string name="strength">Strength</string>
     <string name="dexterity">Dexterity</string>
@@ -63,43 +64,96 @@
     <string name="characterClass">Class</string>
     <string name="characterRace">Race</string>
     <string name="characterBackground">Background</string>
-    <string name="characterExperience">Experience</string>
     <string name="characterExperienceShort">Exp</string>
     <string name="characterLevel">Level</string>
-    <string name="characterLevelShort">Lvl</string>
-
-    <array name="classes">
-        <item>Artificer</item>
-        <item>Barbarian</item>
-        <item>Bard</item>
-        <item>Cleric</item>
-        <item>Druid</item>
-        <item>Fighter</item>
-        <item>Monk</item>
-        <item>Paladin</item>
-        <item>Ranger</item>
-        <item>Rogue</item>
-        <item>Sorcerer</item>
-        <item>Warlock</item>
-        <item>Wizard</item>
-    </array>
 
     <string name="next">Next</string>
+    <string name="finish">Finish</string>
     <string name="enterParams">Please enter params</string>
     <string name="passiveWisdom">Passive wisdom</string>
 
-    <string name="personalityTraits">Personality traits</string>
+    <string name="personalityTraits">Traits</string>
     <string name="personalityIdeals">Ideals</string>
     <string name="personalityBonds">Bonds</string>
     <string name="personalityFlaws">Flaws</string>
 
     <string name="notIndicated">Not indicated</string>
+    <string name="delete">Delete</string>
+
     <string name="addItem">Add item</string>
+    <string name="editItem">Edit item</string>
     <string name="itemName">Item name</string>
     <string name="itemDescription">Item description</string>
+    <string name="count">Count</string>
+
+    <string name="addWeapon">Add weapon</string>
+    <string name="weaponName">Weapon name</string>
+    <string name="weaponDescription">Weapon description</string>
+    <string name="damage">Damage</string>
+    <string name="ATKBonus">ATK bonus</string>
+    <string name="type">Type</string>
+
+    <string name="addFeature">Add feature</string>
+    <string name="featureName">Feature name</string>
+    <string name="featureDescription">Feature description</string>
+
+    <string name="addProficiency">Add proficiency</string>
+    <string name="proficiencyName">Proficiency name</string>
+    <string name="proficiencyDescription">Proficiency description</string>
+
+    <string name="addNote">Add note</string>
+    <string name="noteName">Note name</string>
+    <string name="search">Search</string>
+    <string name="noteText">Note text</string>
+    <string name="noteDateTime">Note date &amp; time</string>
+    <string name="priority">Priority</string>
+
+    <string name="isCompleted">Is completed</string>
 
     <string name="cancel">Cancel</string>
     <string name="OK">OK</string>
+    <string name="apply">Apply</string>
+
+    <string name="sortBy">Sort by</string>
+
+    <string name="languages">List of languages</string>
+    <string name="hitDice">Hit dice</string>
+    <string name="maxHitPoints">Max hit points</string>
+
+    <string name="dice">d%1$d</string>
+    <string name="edit">Edit</string>
+    <string name="characterCharacteristics">Character characteristics</string>
+
+    <string name="characterSettingsTitle">Edit %1$s</string>
+    <string name="character">Character</string>
+
+    <string-array name="dices">
+        <item>d4</item>
+        <item>d6</item>
+        <item>d8</item>
+        <item>d10</item>
+        <item>d12</item>
+        <item>d20</item>
+    </string-array>
+
+    <string-array name="tabsNames">
+        <item>Main</item>
+        <item>Stats</item>
+        <item>Skills</item>
+        <item>Self</item>
+        <item>Items</item>
+        <item>Weapons</item>
+        <item>Features</item>
+        <item>Proficiencies</item>
+        <item>Languages</item>
+        <item>Notes</item>
+    </string-array>
+
+    <string-array name="sortNotes">
+        <item>Name</item>
+        <item>Priority</item>
+        <item>Date</item>
+    </string-array>
 
 
     <!-- TODO: Remove or change this placeholder text -->

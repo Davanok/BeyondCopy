@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".newCharacter.defaultCreate.DefaultCreateCharacterStats">
+    tools:context=".newCharacter.defaultCreate.stats.DefaultCreateCharacterStats">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/editSkillsList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/defaultNextToPersonalityBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +23,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/next"/>
+        android:text="@string/next"
+        android:enabled="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

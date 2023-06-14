@@ -13,8 +13,6 @@
         android:text="@string/fastCreateCharacterBtn"
         style="?android:attr/buttonBarButtonStyle"
         android:layout_weight="1"/>
-
-
     <Button
         android:id="@+id/defaultCreateCharacter"
         android:layout_width="0dp"

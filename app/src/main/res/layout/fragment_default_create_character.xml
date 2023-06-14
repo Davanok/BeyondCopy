@@ -1,57 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".newCharacter.defaultCreate.DefaultCreateCharacter">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_marginBottom="48dp">
 
-        <EditText
-            android:id="@+id/CScName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="username"
-            android:hint="@string/characterName"
-            android:inputType="text"
-            android:textSize="32sp" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/cName"
-            android:textSize="18sp"
-            android:gravity="center_horizontal"/>
+            android:orientation="vertical">
 
-        <include
-            android:id="@+id/new_character_main_params"
-            layout="@layout/new_character_main_params"/>
+            <EditText
+                android:id="@+id/CScName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:hint="@string/characterName"
+                android:inputType="text"
+                android:textSize="32sp" />
 
-        <include
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editStatsMain"
-            layout="@layout/edit_stats_main"/>
-        <include
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editParams"
-            layout="@layout/edit_params"/>
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/cName"
+                android:textSize="18sp" />
+
+            <include
+                android:id="@+id/newCharacterMainParams"
+                layout="@layout/edit_main_params" />
+
+            <include
+                android:id="@+id/editStatsMain"
+                layout="@layout/edit_stats_main" />
+
+            <include
+                android:id="@+id/editParams"
+                layout="@layout/edit_params" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hitDice"
+                    android:minWidth="100dp"
+                    android:textColorHint="?attr/colorAccent">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/hitDice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:textColorHint="?attr/colorAccent" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/maxHitPoints"
+                    android:textColorHint="?attr/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/maxHitPoints"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:textColorHint="?attr/colorAccent" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
     <Button
         android:id="@+id/defaultNextToStatsBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/next"/>
+        android:enabled="false"
+        android:layout_gravity="bottom"
+        android:text="@string/next"
+        android:maxHeight="48dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

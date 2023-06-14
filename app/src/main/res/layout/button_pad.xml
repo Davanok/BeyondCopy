@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/button_pad_cancel"
+        android:text="@string/cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        style="?android:attr/buttonBarButtonStyle"/>
+    <Button
+        android:id="@+id/button_pad_delete"
+        android:text="@string/delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        style="?android:attr/buttonBarButtonStyle"
+        android:visibility="gone"/>
+    <Button
+        android:id="@+id/button_pad_OK"
+        android:text="@string/OK"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        style="?android:attr/buttonBarButtonStyle"
+        android:enabled="false"/>
+</LinearLayout>
